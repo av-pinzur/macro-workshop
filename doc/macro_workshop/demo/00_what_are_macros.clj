@@ -48,15 +48,15 @@
     (println "math doesn't work"))
 
   ;; let's try a simple version, skipping the possibility of varargs
-  (defn when-fn [test then-expr]
-    (if test then-expr))
+  (defn when-fn [test-value then-value]
+    (if test-value then-value))
 
   (when-fn (= 1 2)
     (println "math doesn't work"))
 
-  (defn when-fn' [test then-expr]
+  (defn when-fn' [test-value then-value]
     (println "top of when-fn")
-    (if test then-expr)
+    (if test-value then-value)
     (println "bottom of when-fn"))
 
   (when-fn' (= 1 2)
