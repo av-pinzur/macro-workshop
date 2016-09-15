@@ -5,10 +5,10 @@
 ;; macro body!
 
 (defmacro add [x y]
-  (list '+ x y))
+  `(+ ~x ~y))
 
 (defmacro multiply [x y]
-  (list '* x y))
+  `(* ~x ~y))
 
 (defmacro make-squarer []
   '(fn [a] (* a a)))
