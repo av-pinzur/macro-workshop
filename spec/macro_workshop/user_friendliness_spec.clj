@@ -8,7 +8,6 @@
 
 (describe "user-friendliness of if-nonempty-let"
   (it "provides a nice error message for bindings that don't look like bindings"
-    (pending)
     (try
       (eval `(macros/if-nonempty-let x# :then-branch :else-branch))
       (should= true false) ;; shouldn't get here
@@ -16,8 +15,7 @@
         (should (re-seq #"if-nonempty-let requires a name/value vector binding"
                         (.getMessage e))))))
 
-  (it "provides a nice error message for bindings that "
-    (pending)
+  (it "provides a nice error message for bindings that aren't seqable"
     (try
       (eval `(macros/if-nonempty-let [x# 1] :then-branch :else-branch))
       (should= true false) ;; shouldn't get here
