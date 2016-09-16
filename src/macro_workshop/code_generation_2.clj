@@ -11,7 +11,7 @@
   `(* ~x ~y))
 
 (defmacro make-squarer []
-  '(fn [a] (* a a)))
+  `(fn [a#] (* a# a#)))
 
 (defmacro make-hello-world []
   '(fn [] (print "Hello World!\n")))
