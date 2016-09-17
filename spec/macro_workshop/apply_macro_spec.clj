@@ -5,10 +5,13 @@
 (describe "apply-macro"
   (it "takes a vector literal"
     (should= "[INFO] column one | column two | column three\r\n"
-      (with-out-str (macros/log-row ["column one" "column two" "column three"]))))
+      (with-out-str
+        (macros/log-row ["column one" "column two" "column three"]))))
 
   (it "takes a vector-valued symbol"
     (pending)
-    (should= "[INFO] column one | column two | column three"
-      (let [x ["column one" "column two" "column three"]]
-        (with-out-str (eval `(macros/log-row ~x)))))))
+    (should= "[INFO] column one | column two | column three\r\n"
+      (with-out-str
+        (eval
+          `(let [x# ["column one" "column two" "column three"]]
+            (macros/log-row x#)))))))
