@@ -25,6 +25,9 @@
     ```
 
    How? (or, alternatively, why isn't it possible?) Hint: could the fact that
-   we have `eval` help?
+   we have `eval` help? There is a failing test in
+   `spec/macro_workshop/apply_macro_spec.clj`. Can you make it pass?
 
-
+   ```bash
+   lein spec -a spec/macro_workshop/apply_macro_spec.clj
+   ```
