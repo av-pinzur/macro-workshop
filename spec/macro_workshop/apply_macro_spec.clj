@@ -9,7 +9,6 @@
         (macros/log-row ["column one" "column two" "column three"]))))
 
   (it "takes a vector-valued symbol"
-    (pending)
     (should= "[INFO] column one | column two | column three\r\n"
       (with-out-str
         (eval

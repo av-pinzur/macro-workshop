@@ -5,5 +5,5 @@
 (defmacro log [& args]
   `(println (str "[INFO] " (string/join " | " ~(vec args)))))
 
-(defmacro log-row [row]
-  `(log ~@row)) ;; replace me
+(defn log-row [row]
+  (eval (cons `log row)))
